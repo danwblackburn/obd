@@ -1,8 +1,10 @@
 import matplotlib.pyplot as plt 
+
 import numpy as np
 
 import sys
 import csv
+
 
 if(len(sys.argv) > 1):
     print(sys.argv[1])
@@ -18,19 +20,6 @@ if(len(sys.argv) > 1):
     plt.plot(time, reading)
     plt.show()
 else:
-    fig = plt.figure()
-    fig.show()
-
-    times = []
-    readings = []
-    while True:
-        line = sys.stdin.readline() 
-        if line == '':
-            break
-       
-        time, reading = line.split(',')
-        times.append(time)
-        readings.append(reading)
-        plt.plot(times, readings)
-        plt.draw()
+    print('No file given')
+            
     
