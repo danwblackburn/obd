@@ -1,3 +1,9 @@
 import RPi.GPIO as GPIO
 
-print('I did something!')
+channel = 21
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(channel, GPIO.IN)
+
+while True:
+	print(GPIO.input(channel))
