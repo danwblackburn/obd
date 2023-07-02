@@ -4,7 +4,7 @@ import time
 import csv
 from datetime import datetime, timezone
 
-recording_data = False
+recording_data = True
 
 start_time = time.time()
 
@@ -21,6 +21,8 @@ if recording_data:
 while True:
 	reading = GPIO.input(channel)
 	if recording_data:
-		logger.writerow([time.time(), reading])
+		logger.writerow([time.time() - start_time, reading])
+	print(time.time() - start_time, reading)
+	
 	time.sleep(.01)
 	
